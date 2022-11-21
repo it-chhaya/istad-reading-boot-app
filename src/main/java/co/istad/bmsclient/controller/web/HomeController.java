@@ -1,4 +1,4 @@
-package co.istad.bmsclient.controller;
+package co.istad.bmsclient.controller.web;
 
 import java.util.Arrays;
 
@@ -34,7 +34,7 @@ public class HomeController {
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String doUploadFile(@RequestParam("file") MultipartFile file, ModelMap modelMap) {
         
-        MultipartBodyBuilder filePart = new MultipartBodyBuilder();
+        /*MultipartBodyBuilder filePart = new MultipartBodyBuilder();
         filePart.part("file", file.getResource());
 
         ApiResponse<File> response = webClient.post()
@@ -46,7 +46,7 @@ public class HomeController {
                 
             }).block();
 
-        modelMap.addAttribute("fileUri", response.getData().getUri());
+        modelMap.addAttribute("fileUri", response.getData().getUri());*/
 
         return "upload";
     }
@@ -85,7 +85,7 @@ public class HomeController {
 
         System.out.println(saveBookResp.getMessage()); */
 
-        ApiResponse<Paging<Book>> response = webClient.get()  
+        /*ApiResponse<Paging<Book>> response = webClient.get()
             .uri(builder 
                 -> builder.path("books")
                     .queryParam("pageNum", 1)
@@ -95,9 +95,9 @@ public class HomeController {
             .bodyToMono(new ParameterizedTypeReference<ApiResponse<Paging<Book>>>() {})
             .block();
 
-        modelMap.addAttribute("response", response);
+        modelMap.addAttribute("response", response);*/
 
-        return "index";
+        return "home/index";
     }
 
 }

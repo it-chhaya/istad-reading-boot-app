@@ -1,4 +1,4 @@
-package co.istad.bmsclient.model.genre;
+package co.istad.bmsclient.genre;
 
 import co.istad.bmsclient.model.file.File;
 import lombok.Data;
