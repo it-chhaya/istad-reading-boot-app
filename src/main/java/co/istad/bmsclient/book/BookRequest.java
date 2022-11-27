@@ -1,4 +1,4 @@
-package co.istad.bmsclient.model.book;
+package co.istad.bmsclient.book;
 
 import java.util.List;
 

@@ -1,11 +1,11 @@
-package co.istad.bmsclient.model;
+package co.istad.bmsclient.utils;
 
 import java.util.List;
 
 import lombok.Data;
 
 @Data
-public class Paging<T> {
+public class Pagination<T> {
     
     private List<T> list;
     private Long total;

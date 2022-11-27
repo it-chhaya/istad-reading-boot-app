@@ -15,9 +15,10 @@ public class GenreController {
     @GetMapping("/genre")
     String requestGenrePage(Model model) {
 
-        var response = webClientUtils.fetch("/genres");
+        // var response = webClientUtils.fetch("/genres");
+        // var response = webClientUtils.fetchById("/genres", 1L);
 
-        model.addAttribute("data", response.getData());
+        // model.addAttribute("data", response.getData());
 
         return "genre/page";
     }

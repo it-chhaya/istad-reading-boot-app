@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light shadow-lg">
     <div class="container">
         <a class="navbar-brand" th:href="@{/}">
-            <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+            <img src="/resources/images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
             <span>
                     iSTAD Reading
                     <small>Service From ISTAD</small>
@@ -15,6 +15,10 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" th:href="@{/}">Home</a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link click-scroll" th:href="@{/genre}">Genre</a>
@@ -45,7 +49,8 @@
                 </li>
 
                 <li class="nav-item ms-3">
-                    <a class="nav-link custom-btn custom-border-btn btn" th:href="@{/register}">Register</a>
+                    <a sec:authorize="isAnonymous()" class="nav-link custom-btn custom-border-btn btn" th:href="@{/register}">Register</a>
+                    <a sec:authorize="isAuthenticated()" sec:authentication="name" class="nav-link custom-btn custom-border-btn btn" th:href="@{/profile}">Register</a>
                 </li>
 
             </ul>

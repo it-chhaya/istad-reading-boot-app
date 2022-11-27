@@ -1,0 +1,68 @@
+<div id="bookData" class="col-lg-7 col-12"
+    xmlns:th="http://www.thymeleaf.org">
+
+    <div th:replace="~{book/book-pagination}">
+
+    </div>
+
+    <div th:each="book : ${data.list}" th:object="${book}" class="news-block">
+
+        <div class="news-block-top">
+            <a th:href="@{/book/{id}/information(id=*{id})}">
+                <img src="images/news/medium-shot-volunteers-with-clothing-donations.jpg"
+                     class="news-image img-fluid" alt="">
+            </a>
+
+            <div class="news-category-block">
+                <a th:href="@{/genre/{id}/book(id=10)}" class="category-block-link">
+                    Technology,
+                </a>
+
+                <a th:href="@{/genre/{id}/book(id=10)}" class="category-block-link">
+                    Programming
+                </a>
+            </div>
+        </div>
+
+        <div class="news-block-info">
+            <div class="d-flex mt-2">
+                <div class="news-block-date">
+                    <p>
+                        <i class="bi-calendar4 custom-icon me-1"></i>
+                        <span th:text="*{datePublished}">Published Date</span>
+                    </p>
+                </div>
+
+                <div class="news-block-author mx-5">
+                    <p>
+                        <i class="bi-person custom-icon me-1"></i>
+                        <span th:text="*{author}">Author</span>
+                    </p>
+                </div>
+
+                <div class="news-block-comment">
+                    <p>
+                        <i class="bi-chat-left custom-icon me-1"></i>
+                        4 Stars
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-block-title mb-2">
+                <h4>
+                    <a th:text="*{title}"
+                       th:href="@{/book/{id}/information(id=*{id})}" class="news-block-title-link">
+                        The Lord of the Ring: The Two Towers
+                    </a>
+                </h4>
+            </div>
+
+            <div class="news-block-body">
+                <p th:text="*{description}">
+                    Description
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

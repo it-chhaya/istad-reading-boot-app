@@ -12,12 +12,24 @@ public class WebClientUtils {
 
     private final WebClient webClient;
 
-    public <T> ApiResponse<T> fetch(String endPoint) {
+    public <T> ApiResponse<Pagination<T>> fetch(Long pageNum, String endPoint) {
         return webClient.get()
-                .uri(endPoint)
+                .uri(builder 
+                    -> builder.path(endPoint)
+                    .queryParam("pageNum", pageNum)
+                    .queryParam("pageSize", 5)
+                    .build())
                 .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<ApiResponse<T>>() {
+                .bodyToMono(new ParameterizedTypeReference<ApiResponse<Pagination<T>>>() {
                 }).block();
+    }
+
+    public <T> ApiResponse<T> fetchById(String endPoint, Long id) {
+        return webClient.get()
+            .uri(endPoint + "/" + id)
+            .retrieve()
+            .bodyToMono(new ParameterizedTypeReference<ApiResponse<T>>() {
+            }).block();
     }
 
 }

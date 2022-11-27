@@ -1,0 +1,29 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination mb-5">
+
+        <li class="page-item">
+            <a class="page-link"
+                th:data-page="${data.prePage}"
+                th:classappend="${data.isFirstPage ? 'disabled' : ''}"
+                href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        <li class="page-item"
+            th:each="num : ${data.navigatepageNums}"
+            th:classappend="${data.pageNum == num} ? 'active' : ''">
+            <a th:text="${num}" th:data-page="${num}" class="page-link" href="#">1</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link"
+               th:data-page="${data.nextPage}"
+               th:classappend="${data.isLastPage ? 'disabled' : ''}"    
+               href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>

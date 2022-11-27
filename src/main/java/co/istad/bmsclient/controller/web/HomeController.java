@@ -18,11 +18,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import co.istad.bmsclient.book.Book;
+import co.istad.bmsclient.book.BookRequest;
 import co.istad.bmsclient.model.ApiResponse;
-import co.istad.bmsclient.model.Paging;
-import co.istad.bmsclient.model.book.Book;
-import co.istad.bmsclient.model.book.BookRequest;
 import co.istad.bmsclient.model.file.File;
+import co.istad.bmsclient.utils.Pagination;
 import lombok.RequiredArgsConstructor;
 
 @Controller
