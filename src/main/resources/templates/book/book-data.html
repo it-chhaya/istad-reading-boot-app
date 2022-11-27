@@ -9,7 +9,7 @@
 
         <div class="news-block-top">
             <a th:href="@{/book/{id}/information(id=*{id})}">
-                <img src="images/news/medium-shot-volunteers-with-clothing-donations.jpg"
+                <img th:src="*{cover.uri}"
                      class="news-image img-fluid" alt="">
             </a>
 

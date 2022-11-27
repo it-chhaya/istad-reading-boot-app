@@ -2,7 +2,7 @@ package co.istad.bmsclient.book;
 
 import java.util.List;
 
-import co.istad.bmsclient.model.file.File;
+import co.istad.bmsclient.file.File;
 import co.istad.bmsclient.genre.Genre;
 import lombok.Data;
 
